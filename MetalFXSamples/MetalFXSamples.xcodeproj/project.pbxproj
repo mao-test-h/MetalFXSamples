@@ -16,6 +16,9 @@
 		347A073528FC442D00F9BB9B /* MetalFXSamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A073428FC442D00F9BB9B /* MetalFXSamplesTests.swift */; };
 		347A073F28FC442D00F9BB9B /* MetalFXSamplesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A073E28FC442D00F9BB9B /* MetalFXSamplesUITests.swift */; };
 		347A074128FC442D00F9BB9B /* MetalFXSamplesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A074028FC442D00F9BB9B /* MetalFXSamplesUITestsLaunchTests.swift */; };
+		347A074F28FC465A00F9BB9B /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A074E28FC465A00F9BB9B /* MetalKit.framework */; };
+		347A075128FC466100F9BB9B /* MetalFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075028FC466100F9BB9B /* MetalFX.framework */; };
+		347A075328FC466E00F9BB9B /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075228FC466E00F9BB9B /* ModelIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		347A073A28FC442D00F9BB9B /* MetalFXSamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalFXSamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347A073E28FC442D00F9BB9B /* MetalFXSamplesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalFXSamplesUITests.swift; sourceTree = "<group>"; };
 		347A074028FC442D00F9BB9B /* MetalFXSamplesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalFXSamplesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		347A074E28FC465A00F9BB9B /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		347A075028FC466100F9BB9B /* MetalFX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalFX.framework; path = System/Library/Frameworks/MetalFX.framework; sourceTree = SDKROOT; };
+		347A075228FC466E00F9BB9B /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347A075328FC466E00F9BB9B /* ModelIO.framework in Frameworks */,
+				347A075128FC466100F9BB9B /* MetalFX.framework in Frameworks */,
+				347A074F28FC465A00F9BB9B /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +92,7 @@
 				347A073328FC442D00F9BB9B /* MetalFXSamplesTests */,
 				347A073D28FC442D00F9BB9B /* MetalFXSamplesUITests */,
 				347A071B28FC442B00F9BB9B /* Products */,
+				347A074D28FC465900F9BB9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +135,16 @@
 				347A074028FC442D00F9BB9B /* MetalFXSamplesUITestsLaunchTests.swift */,
 			);
 			path = MetalFXSamplesUITests;
+			sourceTree = "<group>";
+		};
+		347A074D28FC465900F9BB9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				347A075228FC466E00F9BB9B /* ModelIO.framework */,
+				347A075028FC466100F9BB9B /* MetalFX.framework */,
+				347A074E28FC465A00F9BB9B /* MetalKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +462,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -469,7 +491,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
