@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eda79cf1-eb98-4b51-8028-6f99ce507b18" name="Changes" comment="" />
+    <list default="true" id="eda79cf1-eb98-4b51-8028-6f99ce507b18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MetalFXSamples/SwiftUI/MainView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MetalFXSamples.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MetalFXSamples/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MetalFXSamples/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples/SceneDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalFXSamples/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MetalFXSamples/ViewController.swift" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,17 +37,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cidr.known.project.marker": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="MetalFXSamples" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MetalFXSamples" TARGET_NAME="MetalFXSamples" CONFIG_NAME="Debug" SCHEME_NAME="MetalFXSamples" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="MetalFXSamples" RUN_TARGET_NAME="MetalFXSamples" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+    <configuration default="false" name="MetalFXSamples" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MetalFXSamples" TARGET_NAME="MetalFXSamples" CONFIG_NAME="Debug" SCHEME_NAME="MetalFXSamples" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="MetalFXSamples" RUN_TARGET_NAME="MetalFXSamples" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
@@ -56,6 +72,7 @@
       <workItem from="1665928509064" duration="60000" />
       <workItem from="1665928582361" duration="38000" />
       <workItem from="1665928630696" duration="169000" />
+      <workItem from="1665929956215" duration="2800000" />
     </task>
     <servers />
   </component>
