@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A071D28FC442B00F9BB9B /* AppDelegate.swift */; };
-		347A072028FC442B00F9BB9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A071F28FC442B00F9BB9B /* SceneDelegate.swift */; };
 		347A072228FC442B00F9BB9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A072128FC442B00F9BB9B /* ViewController.swift */; };
-		347A072528FC442B00F9BB9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347A072328FC442B00F9BB9B /* Main.storyboard */; };
 		347A072728FC442D00F9BB9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347A072628FC442D00F9BB9B /* Assets.xcassets */; };
 		347A072A28FC442D00F9BB9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */; };
 		347A073528FC442D00F9BB9B /* MetalFXSamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A073428FC442D00F9BB9B /* MetalFXSamplesTests.swift */; };
@@ -19,6 +17,7 @@
 		347A074F28FC465A00F9BB9B /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A074E28FC465A00F9BB9B /* MetalKit.framework */; };
 		347A075128FC466100F9BB9B /* MetalFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075028FC466100F9BB9B /* MetalFX.framework */; };
 		347A075328FC466E00F9BB9B /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075228FC466E00F9BB9B /* ModelIO.framework */; };
+		347A075628FDC55D00F9BB9B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A075528FDC55D00F9BB9B /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +40,7 @@
 /* Begin PBXFileReference section */
 		347A071A28FC442B00F9BB9B /* MetalFXSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFXSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347A071D28FC442B00F9BB9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		347A071F28FC442B00F9BB9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		347A072128FC442B00F9BB9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		347A072428FC442B00F9BB9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		347A072628FC442D00F9BB9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		347A072928FC442D00F9BB9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		347A072B28FC442D00F9BB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +52,7 @@
 		347A074E28FC465A00F9BB9B /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		347A075028FC466100F9BB9B /* MetalFX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalFX.framework; path = System/Library/Frameworks/MetalFX.framework; sourceTree = SDKROOT; };
 		347A075228FC466E00F9BB9B /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
+		347A075528FDC55D00F9BB9B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				347A072628FC442D00F9BB9B /* Assets.xcassets */,
-				347A072328FC442B00F9BB9B /* Main.storyboard */,
 				347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */,
 				347A072B28FC442D00F9BB9B /* Info.plist */,
 				347A071D28FC442B00F9BB9B /* AppDelegate.swift */,
-				347A071F28FC442B00F9BB9B /* SceneDelegate.swift */,
 				347A072128FC442B00F9BB9B /* ViewController.swift */,
+				347A075428FDC52C00F9BB9B /* SwiftUI */,
 			);
 			path = MetalFXSamples;
 			sourceTree = "<group>";
@@ -145,6 +142,14 @@
 				347A074E28FC465A00F9BB9B /* MetalKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		347A075428FDC52C00F9BB9B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				347A075528FDC55D00F9BB9B /* MainView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +258,6 @@
 			files = (
 				347A072A28FC442D00F9BB9B /* LaunchScreen.storyboard in Resources */,
 				347A072728FC442D00F9BB9B /* Assets.xcassets in Resources */,
-				347A072528FC442B00F9BB9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				347A072228FC442B00F9BB9B /* ViewController.swift in Sources */,
+				347A075628FDC55D00F9BB9B /* MainView.swift in Sources */,
 				347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */,
-				347A072028FC442B00F9BB9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		347A072328FC442B00F9BB9B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				347A072428FC442B00F9BB9B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -461,7 +457,6 @@
 				INFOPLIST_FILE = MetalFXSamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -490,7 +485,6 @@
 				INFOPLIST_FILE = MetalFXSamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
