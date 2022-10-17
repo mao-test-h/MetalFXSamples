@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "levels" : [
+    {
+      "filename" : "tex2-normals2.png",
+      "mipmap-level" : "base"
+    }
+  ]
+}
