@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "levels" : [
+    {
+      "filename" : "solid-noise1.png",
+      "mipmap-level" : "base"
+    }
+  ]
+}
