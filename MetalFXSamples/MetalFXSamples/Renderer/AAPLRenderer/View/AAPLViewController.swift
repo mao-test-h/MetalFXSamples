@@ -1,9 +1,13 @@
 import UIKit
 import SwiftUI
 import MetalKit
+import Combine
 
 class AAPLViewController: UIViewController {
-    var renderer: AAPLRenderer!
+    private var renderer: AAPLRenderer!
+
+    private let contentsState = AAPLContentsState()
+    private var cancellableSet = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +21,7 @@ class AAPLViewController: UIViewController {
         view.addSubview(mtkView)
 
         // パラメータの操作部はSwiftUIで上に重ねて実装
-        let contentsController = UIHostingController(rootView: AAPLContents())
+        let contentsController = UIHostingController(rootView: AAPLContents(with: contentsState))
         guard let contents = contentsController.view else {
             return
         }
@@ -40,5 +44,92 @@ class AAPLViewController: UIViewController {
         renderer = newRenderer
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
         mtkView.delegate = renderer
+
+        binding()
     }
+
+    private func binding() {
+        contentsState.$selectedScalingModeIndex.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                // Save the current mode to configure MetalFX if the combo button changes.
+                let previousScalingMode = self.renderer.mfxScalingMode
+
+                // Set the current scaling mode.
+                let currentScalingMode = AAPLScalingMode(rawValue: value)!
+                self.renderer.mfxScalingMode = currentScalingMode
+
+                if previousScalingMode != self.renderer.mfxScalingMode {
+                    self.renderer.setupMetalFX()
+                }
+            }
+            .store(in: &cancellableSet)
+
+        contentsState.$resetHistorySwitch.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                self.renderer.resetHistoryEnabled = value
+            }
+            .store(in: &cancellableSet)
+
+
+        contentsState.$animationSwitch.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                self.renderer.animationEnabled = value
+            }
+            .store(in: &cancellableSet)
+
+        contentsState.$proceduralTextureSwitch.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                self.renderer.proceduralTextureEnabled = value
+            }
+            .store(in: &cancellableSet)
+
+        contentsState.$renderScaleSlider.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                self.renderer.adjustRenderScale(value)
+                let scale = self.renderer.renderTarget.renderScale
+                self.contentsState.renderScaleLabel = String(format: "% 3d%%", arguments: [Int(scale * 100)])
+            }
+            .store(in: &cancellableSet)
+
+
+        contentsState.$mipBiasSlider.sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+
+                self.renderer.textureMipmapBias = value
+                self.contentsState.mipBiasLabel = String(format: "% 1.3f", arguments: [value])
+            }
+            .store(in: &cancellableSet)
+
+    }
+}
+
+final class AAPLContentsState: ObservableObject {
+    @Published var selectedScalingModeIndex: Int = 0
+
+    @Published var resetHistorySwitch: Bool = false
+    @Published var animationSwitch: Bool = false
+    @Published var proceduralTextureSwitch: Bool = false
+
+    @Published var renderScaleSlider: Float = 0.5
+    @Published var renderScaleLabel: String = "0%"
+
+    @Published var mipBiasSlider: Float = -1
+    @Published var mipBiasLabel: String = "-1.000"
 }
