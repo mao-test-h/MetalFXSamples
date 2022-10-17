@@ -24,6 +24,8 @@
 		347A076428FDDBAC00F9BB9B /* AAPLRenderTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A076328FDDBAC00F9BB9B /* AAPLRenderTarget.swift */; };
 		347A076628FDDBE400F9BB9B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 347A076528FDDBE400F9BB9B /* Shaders.metal */; };
 		347A076A28FDDC6600F9BB9B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 347A076928FDDC6600F9BB9B /* LICENSE.txt */; };
+		347A076E28FDE0A200F9BB9B /* AAPLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A076D28FDE0A200F9BB9B /* AAPLViewController.swift */; };
+		347A077128FDE0D600F9BB9B /* AAPLContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A077028FDE0D600F9BB9B /* AAPLContents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		347A076528FDDBE400F9BB9B /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		347A076728FDDBFC00F9BB9B /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		347A076928FDDC6600F9BB9B /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		347A076D28FDE0A200F9BB9B /* AAPLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLViewController.swift; sourceTree = "<group>"; };
+		347A077028FDE0D600F9BB9B /* AAPLContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLContents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		347A075E28FDD75D00F9BB9B /* AAPLRenderer */ = {
 			isa = PBXGroup;
 			children = (
+				347A076C28FDE08200F9BB9B /* View */,
 				347A075C28FDCEA900F9BB9B /* AAPLRenderer.swift */,
 				347A075F28FDDB9200F9BB9B /* AAPLRendererHelper.swift */,
 				347A076128FDDBA000F9BB9B /* AAPLMathUtilities.swift */,
@@ -196,6 +201,23 @@
 				347A076928FDDC6600F9BB9B /* LICENSE.txt */,
 			);
 			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		347A076C28FDE08200F9BB9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				347A076F28FDE0BC00F9BB9B /* SwiftUI */,
+				347A076D28FDE0A200F9BB9B /* AAPLViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		347A076F28FDE0BC00F9BB9B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				347A077028FDE0D600F9BB9B /* AAPLContents.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +354,11 @@
 			files = (
 				347A075D28FDCEA900F9BB9B /* AAPLRenderer.swift in Sources */,
 				347A076428FDDBAC00F9BB9B /* AAPLRenderTarget.swift in Sources */,
+				347A076E28FDE0A200F9BB9B /* AAPLViewController.swift in Sources */,
 				347A076028FDDB9200F9BB9B /* AAPLRendererHelper.swift in Sources */,
 				347A076628FDDBE400F9BB9B /* Shaders.metal in Sources */,
 				347A072228FC442B00F9BB9B /* ViewController.swift in Sources */,
+				347A077128FDE0D600F9BB9B /* AAPLContents.swift in Sources */,
 				347A075628FDC55D00F9BB9B /* MainView.swift in Sources */,
 				347A076228FDDBA000F9BB9B /* AAPLMathUtilities.swift in Sources */,
 				347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */,
