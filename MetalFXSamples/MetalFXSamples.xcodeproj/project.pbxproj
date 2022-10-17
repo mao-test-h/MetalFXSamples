@@ -109,13 +109,13 @@
 		347A071C28FC442B00F9BB9B /* MetalFXSamples */ = {
 			isa = PBXGroup;
 			children = (
+				347A072628FC442D00F9BB9B /* Assets.xcassets */,
+				347A072328FC442B00F9BB9B /* Main.storyboard */,
+				347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */,
+				347A072B28FC442D00F9BB9B /* Info.plist */,
 				347A071D28FC442B00F9BB9B /* AppDelegate.swift */,
 				347A071F28FC442B00F9BB9B /* SceneDelegate.swift */,
 				347A072128FC442B00F9BB9B /* ViewController.swift */,
-				347A072328FC442B00F9BB9B /* Main.storyboard */,
-				347A072628FC442D00F9BB9B /* Assets.xcassets */,
-				347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */,
-				347A072B28FC442D00F9BB9B /* Info.plist */,
 			);
 			path = MetalFXSamples;
 			sourceTree = "<group>";
