@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A071D28FC442B00F9BB9B /* AppDelegate.swift */; };
-		347A072228FC442B00F9BB9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A072128FC442B00F9BB9B /* ViewController.swift */; };
 		347A072728FC442D00F9BB9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347A072628FC442D00F9BB9B /* Assets.xcassets */; };
 		347A072A28FC442D00F9BB9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */; };
 		347A073528FC442D00F9BB9B /* MetalFXSamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A073428FC442D00F9BB9B /* MetalFXSamplesTests.swift */; };
@@ -17,7 +16,6 @@
 		347A074F28FC465A00F9BB9B /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A074E28FC465A00F9BB9B /* MetalKit.framework */; };
 		347A075128FC466100F9BB9B /* MetalFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075028FC466100F9BB9B /* MetalFX.framework */; };
 		347A075328FC466E00F9BB9B /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A075228FC466E00F9BB9B /* ModelIO.framework */; };
-		347A075628FDC55D00F9BB9B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A075528FDC55D00F9BB9B /* MainView.swift */; };
 		347A075D28FDCEA900F9BB9B /* AAPLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A075C28FDCEA900F9BB9B /* AAPLRenderer.swift */; };
 		347A076028FDDB9200F9BB9B /* AAPLRendererHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A075F28FDDB9200F9BB9B /* AAPLRendererHelper.swift */; };
 		347A076228FDDBA000F9BB9B /* AAPLMathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A076128FDDBA000F9BB9B /* AAPLMathUtilities.swift */; };
@@ -50,7 +48,6 @@
 /* Begin PBXFileReference section */
 		347A071A28FC442B00F9BB9B /* MetalFXSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFXSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347A071D28FC442B00F9BB9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		347A072128FC442B00F9BB9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		347A072628FC442D00F9BB9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		347A072928FC442D00F9BB9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		347A072B28FC442D00F9BB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +59,6 @@
 		347A074E28FC465A00F9BB9B /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		347A075028FC466100F9BB9B /* MetalFX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalFX.framework; path = System/Library/Frameworks/MetalFX.framework; sourceTree = SDKROOT; };
 		347A075228FC466E00F9BB9B /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
-		347A075528FDC55D00F9BB9B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		347A075828FDCDE200F9BB9B /* MetalFXSamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalFXSamples-Bridging-Header.h"; sourceTree = "<group>"; };
 		347A075C28FDCEA900F9BB9B /* AAPLRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLRenderer.swift; sourceTree = "<group>"; };
 		347A075F28FDDB9200F9BB9B /* AAPLRendererHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLRendererHelper.swift; sourceTree = "<group>"; };
@@ -133,9 +129,7 @@
 				347A072828FC442D00F9BB9B /* LaunchScreen.storyboard */,
 				347A072B28FC442D00F9BB9B /* Info.plist */,
 				347A071D28FC442B00F9BB9B /* AppDelegate.swift */,
-				347A072128FC442B00F9BB9B /* ViewController.swift */,
 				347A075828FDCDE200F9BB9B /* MetalFXSamples-Bridging-Header.h */,
-				347A075428FDC52C00F9BB9B /* SwiftUI */,
 				347A075B28FDCE4800F9BB9B /* Renderer */,
 			);
 			path = MetalFXSamples;
@@ -166,14 +160,6 @@
 				347A074E28FC465A00F9BB9B /* MetalKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		347A075428FDC52C00F9BB9B /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				347A075528FDC55D00F9BB9B /* MainView.swift */,
-			);
-			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		347A075B28FDCE4800F9BB9B /* Renderer */ = {
@@ -388,9 +374,7 @@
 				347A076E28FDE0A200F9BB9B /* AAPLViewController.swift in Sources */,
 				347A076028FDDB9200F9BB9B /* AAPLRendererHelper.swift in Sources */,
 				347A076628FDDBE400F9BB9B /* Shaders.metal in Sources */,
-				347A072228FC442B00F9BB9B /* ViewController.swift in Sources */,
 				347A077128FDE0D600F9BB9B /* AAPLContents.swift in Sources */,
-				347A075628FDC55D00F9BB9B /* MainView.swift in Sources */,
 				347A076228FDDBA000F9BB9B /* AAPLMathUtilities.swift in Sources */,
 				347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */,
 				349DC9A22900871F006456AD /* SpacialScalingContents.swift in Sources */,

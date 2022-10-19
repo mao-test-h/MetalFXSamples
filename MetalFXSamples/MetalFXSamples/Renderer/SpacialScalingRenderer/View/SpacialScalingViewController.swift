@@ -5,18 +5,18 @@ class SpacialScalingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let mainViewController = UIHostingController(rootView: MainView())
-        guard let mainView = mainViewController.view else {
+        let viewController = UIHostingController(rootView: SpacialScalingContents())
+        guard let contents = viewController.view else {
             return
         }
 
-        view.addSubview(mainView)
-        mainView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contents)
+        contents.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: view.topAnchor),
-            mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            contents.topAnchor.constraint(equalTo: view.topAnchor),
+            contents.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: contents.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: contents.bottomAnchor)
         ])
     }
 }
