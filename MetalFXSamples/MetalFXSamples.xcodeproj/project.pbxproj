@@ -26,6 +26,8 @@
 		347A076A28FDDC6600F9BB9B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 347A076928FDDC6600F9BB9B /* LICENSE.txt */; };
 		347A076E28FDE0A200F9BB9B /* AAPLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A076D28FDE0A200F9BB9B /* AAPLViewController.swift */; };
 		347A077128FDE0D600F9BB9B /* AAPLContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A077028FDE0D600F9BB9B /* AAPLContents.swift */; };
+		349DC99F29008708006456AD /* SpacialScalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DC99E29008708006456AD /* SpacialScalingViewController.swift */; };
+		349DC9A22900871F006456AD /* SpacialScalingContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DC9A12900871F006456AD /* SpacialScalingContents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		347A076928FDDC6600F9BB9B /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		347A076D28FDE0A200F9BB9B /* AAPLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLViewController.swift; sourceTree = "<group>"; };
 		347A077028FDE0D600F9BB9B /* AAPLContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLContents.swift; sourceTree = "<group>"; };
+		349DC99E29008708006456AD /* SpacialScalingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScalingViewController.swift; sourceTree = "<group>"; };
+		349DC9A12900871F006456AD /* SpacialScalingContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScalingContents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		347A075B28FDCE4800F9BB9B /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				349DC99C290086C0006456AD /* SpacialScalingRenderer */,
 				347A075E28FDD75D00F9BB9B /* AAPLRenderer */,
 			);
 			path = Renderer;
@@ -216,6 +221,31 @@
 			isa = PBXGroup;
 			children = (
 				347A077028FDE0D600F9BB9B /* AAPLContents.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		349DC99C290086C0006456AD /* SpacialScalingRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				349DC99D290086F5006456AD /* View */,
+			);
+			path = SpacialScalingRenderer;
+			sourceTree = "<group>";
+		};
+		349DC99D290086F5006456AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				349DC9A02900870D006456AD /* SwiftUI */,
+				349DC99E29008708006456AD /* SpacialScalingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		349DC9A02900870D006456AD /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				349DC9A12900871F006456AD /* SpacialScalingContents.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -353,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				347A075D28FDCEA900F9BB9B /* AAPLRenderer.swift in Sources */,
+				349DC99F29008708006456AD /* SpacialScalingViewController.swift in Sources */,
 				347A076428FDDBAC00F9BB9B /* AAPLRenderTarget.swift in Sources */,
 				347A076E28FDE0A200F9BB9B /* AAPLViewController.swift in Sources */,
 				347A076028FDDB9200F9BB9B /* AAPLRendererHelper.swift in Sources */,
@@ -362,6 +393,7 @@
 				347A075628FDC55D00F9BB9B /* MainView.swift in Sources */,
 				347A076228FDDBA000F9BB9B /* AAPLMathUtilities.swift in Sources */,
 				347A071E28FC442B00F9BB9B /* AppDelegate.swift in Sources */,
+				349DC9A22900871F006456AD /* SpacialScalingContents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
