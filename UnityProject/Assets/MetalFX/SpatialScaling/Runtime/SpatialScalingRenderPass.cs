@@ -4,26 +4,26 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-namespace MetalFX.SpacingScaling.Runtime
+namespace MetalFX.SpatialScaling.Runtime
 {
-    sealed class SpacingScalingRenderPass : ScriptableRenderPass, IDisposable
+    sealed class SpatialScalingRenderPass : ScriptableRenderPass, IDisposable
     {
-        const string RenderPassName = "MetalFX_SpacingScaling";
+        const string RenderPassName = "MetalFX_SpatialScaling";
         readonly ProfilingSampler _profilingSampler;
-        readonly SpacingScalingVolume _volume;
+        readonly SpatialScalingVolume _volume;
 
         RenderTexture _srcRT = null;
         RenderTexture _dstRT = null;
 
         bool isActive => (_volume != null && _volume.IsActive);
 
-        public SpacingScalingRenderPass()
+        public SpatialScalingRenderPass()
         {
             renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
             _profilingSampler = new ProfilingSampler(RenderPassName);
 
             var volumeStack = VolumeManager.instance.stack;
-            _volume = volumeStack.GetComponent<SpacingScalingVolume>();
+            _volume = volumeStack.GetComponent<SpatialScalingVolume>();
         }
 
         public void Dispose()
@@ -65,7 +65,7 @@ namespace MetalFX.SpacingScaling.Runtime
 #if UNITY_IOS && !UNITY_EDITOR
                 if (_volume.IsActive)
                 {
-                    [DllImport("__Internal", EntryPoint = "callMetalFX_SpacingScaling")]
+                    [DllImport("__Internal", EntryPoint = "callMetalFX_SpatialScaling")]
                     static extern void CallNativeMethod(
                         IntPtr srcTexture, IntPtr dstTexture,
                         Int32 width, Int32 height);

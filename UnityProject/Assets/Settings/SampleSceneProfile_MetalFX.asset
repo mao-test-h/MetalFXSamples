@@ -69,7 +69,7 @@ MonoBehaviour:
   rounded:
     m_OverrideState: 0
     m_Value: 0
---- !u!114 &-791683365540951209
+--- !u!114 &-3459596611050763076
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd2dd4bef5d0c49ba9e3dd20e7df163a, type: 3}
-  m_Name: SpacingScalingVolume
+  m_Name: SpatialScalingVolume
   m_EditorClassIdentifier: 
   active: 1
   isEnable: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
   - {fileID: 849379129802519247}
   - {fileID: -7893295128165547882}
   - {fileID: -7011558710299706105}
-  - {fileID: -791683365540951209}
+  - {fileID: -3459596611050763076}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3

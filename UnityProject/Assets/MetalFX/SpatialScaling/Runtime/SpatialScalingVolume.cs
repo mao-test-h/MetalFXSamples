@@ -2,11 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace MetalFX.SpacingScaling.Runtime
+namespace MetalFX.SpatialScaling.Runtime
 {
     [Serializable]
-    [VolumeComponentMenu("MetalFX/Spacing Scaling")]
-    public sealed class SpacingScalingVolume : VolumeComponent
+    [VolumeComponentMenu("MetalFX/Spatial Scaling")]
+    public sealed class SpatialScalingVolume : VolumeComponent
     {
         [SerializeField] bool isEnable = true;
 

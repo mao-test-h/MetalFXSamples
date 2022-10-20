@@ -1,16 +1,16 @@
 using System;
 using UnityEngine.Rendering.Universal;
 
-namespace MetalFX.SpacingScaling.Runtime
+namespace MetalFX.SpatialScaling.Runtime
 {
     [Serializable]
-    public sealed class SpacingScalingFeature : ScriptableRendererFeature
+    public sealed class SpatialScalingFeature : ScriptableRendererFeature
     {
-        SpacingScalingRenderPass _scriptablePass;
+        SpatialScalingRenderPass _scriptablePass;
 
         public override void Create()
         {
-            _scriptablePass = new SpacingScalingRenderPass();
+            _scriptablePass = new SpatialScalingRenderPass();
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)

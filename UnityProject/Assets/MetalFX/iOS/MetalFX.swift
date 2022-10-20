@@ -5,7 +5,7 @@ final class MTLHelper {
     private static var mfxSpatialScaler: MTLFXSpatialScaler? = nil
     private static var commandQueue: MTLCommandQueue? = nil
 
-    public static func callSpacingScaling(
+    public static func callSpatialScaling(
         _ srcTexture: MTLTexture, _ dstTexture: MTLTexture,
         _ width: Int32, _ height: Int32) {
 
@@ -45,9 +45,8 @@ final class MTLHelper {
     }
 }
 
-
-@_cdecl("callMetalFX_SpacingScaling")
-func callMetalFX_SpacingScaling(
+@_cdecl("callMetalFX_SpatialScaling")
+func callMetalFX_SpatialScaling(
     _ srcTexturePtr: UnsafeRawPointer?,
     _ dstTexturePtr: UnsafeRawPointer?,
     _ width: Int32, _ height: Int32) {
@@ -61,5 +60,5 @@ func callMetalFX_SpacingScaling(
     let srcTexture: MTLTexture = Unmanaged.fromOpaque(srcTexturePtr).takeUnretainedValue()
     let dstTexture: MTLTexture = Unmanaged.fromOpaque(dstTexturePtr).takeUnretainedValue()
 
-    MTLHelper.callSpacingScaling(srcTexture, dstTexture, width, height)
+    MTLHelper.callSpatialScaling(srcTexture, dstTexture, width, height)
 }
