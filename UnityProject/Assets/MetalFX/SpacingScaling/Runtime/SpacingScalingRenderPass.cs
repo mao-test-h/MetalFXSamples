@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -11,11 +12,14 @@ namespace MetalFX.SpacingScaling.Runtime
         readonly ProfilingSampler _profilingSampler;
         readonly SpacingScalingVolume _volume;
 
+        RenderTexture _srcRT = null;
+        RenderTexture _dstRT = null;
+
         bool isActive => (_volume != null && _volume.IsActive);
 
         public SpacingScalingRenderPass()
         {
-            renderPassEvent = RenderPassEvent.AfterRendering;
+            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
             _profilingSampler = new ProfilingSampler(RenderPassName);
 
             var volumeStack = VolumeManager.instance.stack;
@@ -35,7 +39,6 @@ namespace MetalFX.SpacingScaling.Runtime
                 return;
             }
 
-            // TODO: Swap Bufferの検証
             var cmd = CommandBufferPool.Get(RenderPassName);
             cmd.Clear();
             using (new ProfilingScope(cmd, _profilingSampler))
@@ -44,18 +47,36 @@ namespace MetalFX.SpacingScaling.Runtime
                 var cameraTargetDescriptor = renderingData.cameraData.cameraTargetDescriptor;
                 cameraTargetDescriptor.depthBufferBits = 0;
 
-                // MTLTextureに変換したいので`RenderTexture`で取得を行う
-                var mainRT = RenderTexture.GetTemporary(cameraTargetDescriptor);
-                cmd.Blit(source, mainRT);
-
-                // TODO: ネイティブで頑張る
-                if (_volume.IsActive)
+                // NOTE: `RenderTexture.GetTemporary`を使うとネイティブ側で怒られたので`RenderTexture`を作ってる
+                if (_srcRT == null || _dstRT == null)
                 {
+                    var desc = new RenderTextureDescriptor(
+                        cameraTargetDescriptor.width,
+                        cameraTargetDescriptor.height,
+                        RenderTextureFormat.BGRA32);
+                    _srcRT = new RenderTexture(desc);
+                    _dstRT = new RenderTexture(desc);
                 }
 
-                // 書き戻す
-                cmd.Blit(mainRT, source);
-                RenderTexture.ReleaseTemporary(mainRT);
+                // NOTE: `dst`側にもBlitしないとnullの状態でnativeに渡される？
+                cmd.Blit(source, _srcRT);
+                cmd.Blit(source, _dstRT);
+
+#if UNITY_IOS && !UNITY_EDITOR
+                if (_volume.IsActive)
+                {
+                    [DllImport("__Internal", EntryPoint = "callMetalFX_SpacingScaling")]
+                    static extern void CallNativeMethod(
+                        IntPtr srcTexture, IntPtr dstTexture,
+                        Int32 width, Int32 height);
+
+                    // ネイティブ側にてscalingした結果を`dst`に書き込む
+                    CallNativeMethod(
+                        _srcRT.GetNativeTexturePtr(), _dstRT.GetNativeTexturePtr(),
+                        cameraTargetDescriptor.width, cameraTargetDescriptor.height);
+                }
+#endif
+                cmd.Blit(_dstRT, source);
             }
 
             context.ExecuteCommandBuffer(cmd);
