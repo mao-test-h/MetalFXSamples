@@ -8,10 +8,6 @@ namespace MetalFX.SpacingScaling.Runtime
     sealed class SpacingScalingRenderPass : ScriptableRenderPass, IDisposable
     {
         const string RenderPassName = "MetalFX_SpacingScaling";
-
-        // Material Properties
-        static readonly int MainTexID = Shader.PropertyToID("_MainTex");
-
         readonly ProfilingSampler _profilingSampler;
         readonly SpacingScalingVolume _volume;
 
