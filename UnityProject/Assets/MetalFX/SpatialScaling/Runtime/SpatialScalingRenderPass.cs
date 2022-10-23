@@ -1,5 +1,9 @@
-using System;
+#if UNITY_IOS && !UNITY_EDITOR
+#define IOS_ONLY
 using System.Runtime.InteropServices;
+#endif
+
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -62,7 +66,7 @@ namespace MetalFX.SpatialScaling.Runtime
                 cmd.Blit(source, _srcRT);
                 cmd.Blit(source, _dstRT);
 
-#if UNITY_IOS && !UNITY_EDITOR
+#if IOS_ONLY
                 if (_volume.IsActive)
                 {
                     [DllImport("__Internal", EntryPoint = "callMetalFX_SpatialScaling")]
