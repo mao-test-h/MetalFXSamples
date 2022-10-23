@@ -25,11 +25,8 @@ namespace MinimumExample.Editor
             var schemePath = $"{path}/Unity-iPhone.xcodeproj/xcshareddata/xcschemes/Unity-iPhone.xcscheme";
             var xcScheme = new XcScheme();
             xcScheme.ReadFromFile(schemePath);
-
-            xcScheme.SetMetalValidationOnRun(XcScheme.MetalValidation.Extended);
             xcScheme.SetFrameCaptureModeOnRun(XcScheme.FrameCaptureMode.Metal);
             xcScheme.SetDebugExecutable(true);
-
             xcScheme.WriteToFile(schemePath);
         }
     }
