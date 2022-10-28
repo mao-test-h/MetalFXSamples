@@ -5,18 +5,19 @@ final class MTLHelper {
     private static var mfxSpatialScaler: MTLFXSpatialScaler? = nil
     private static var commandQueue: MTLCommandQueue? = nil
 
-    public static func callSpatialScaling(
-        _ srcTexture: MTLTexture, _ dstTexture: MTLTexture,
-        _ width: Int32, _ height: Int32) {
+    public static func callSpatialScaling(_ srcTexture: MTLTexture, _ dstTexture: MTLTexture) {
+
+        let width = srcTexture.width
+        let height = srcTexture.height
 
         if mfxSpatialScaler == nil {
             let desc = MTLFXSpatialScalerDescriptor()
-            desc.inputWidth = Int(width)
-            desc.inputHeight = Int(height)
-            desc.outputWidth = Int(width) * 2
-            desc.outputHeight = Int(height) * 2
-            desc.colorTextureFormat = .bgra8Unorm
-            desc.outputTextureFormat = .bgra8Unorm
+            desc.inputWidth = width
+            desc.inputHeight = height
+            desc.outputWidth = width * 2
+            desc.outputHeight = height * 2
+            desc.colorTextureFormat = srcTexture.pixelFormat
+            desc.outputTextureFormat = dstTexture.pixelFormat
             desc.colorProcessingMode = .linear
 
             let mtlDevice = MTLCreateSystemDefaultDevice()!
@@ -46,10 +47,7 @@ final class MTLHelper {
 }
 
 @_cdecl("callMetalFX_SpatialScaling")
-func callMetalFX_SpatialScaling(
-    _ srcTexturePtr: UnsafeRawPointer?,
-    _ dstTexturePtr: UnsafeRawPointer?,
-    _ width: Int32, _ height: Int32) {
+func callMetalFX_SpatialScaling(_ srcTexturePtr: UnsafeRawPointer?, _ dstTexturePtr: UnsafeRawPointer?) {
 
     guard let srcTexturePtr = srcTexturePtr,
           let dstTexturePtr = dstTexturePtr
@@ -60,5 +58,5 @@ func callMetalFX_SpatialScaling(
     let srcTexture: MTLTexture = Unmanaged.fromOpaque(srcTexturePtr).takeUnretainedValue()
     let dstTexture: MTLTexture = Unmanaged.fromOpaque(dstTexturePtr).takeUnretainedValue()
 
-    MTLHelper.callSpatialScaling(srcTexture, dstTexture, width, height)
+    MTLHelper.callSpatialScaling(srcTexture, dstTexture)
 }

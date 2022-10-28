@@ -54,12 +54,13 @@ namespace MetalFX.SpatialScaling.Runtime
                 // NOTE: `RenderTexture.GetTemporary`を使うとネイティブ側で怒られたので`RenderTexture`を作ってる
                 if (_srcRT == null || _dstRT == null)
                 {
-                    var desc = new RenderTextureDescriptor(
-                        cameraTargetDescriptor.width,
-                        cameraTargetDescriptor.height,
-                        RenderTextureFormat.BGRA32);
-                    _srcRT = new RenderTexture(desc);
-                    _dstRT = new RenderTexture(desc);
+                    _srcRT = new RenderTexture(cameraTargetDescriptor);
+
+                    // NOTE: RenderScaleが0.5であることを期待して等倍に戻している
+                    var dstDescriptor = new RenderTextureDescriptor(
+                        cameraTargetDescriptor.width * 2,
+                        cameraTargetDescriptor.height * 2);
+                    _dstRT = new RenderTexture(dstDescriptor);
                 }
 
                 // NOTE: `dst`側にもBlitしないとnullの状態でnativeに渡される？
@@ -70,14 +71,10 @@ namespace MetalFX.SpatialScaling.Runtime
                 if (_volume.IsActive)
                 {
                     [DllImport("__Internal", EntryPoint = "callMetalFX_SpatialScaling")]
-                    static extern void CallNativeMethod(
-                        IntPtr srcTexture, IntPtr dstTexture,
-                        Int32 width, Int32 height);
+                    static extern void CallNativeMethod(IntPtr srcTexture, IntPtr dstTexture);
 
                     // ネイティブ側にてscalingした結果を`dst`に書き込む
-                    CallNativeMethod(
-                        _srcRT.GetNativeTexturePtr(), _dstRT.GetNativeTexturePtr(),
-                        cameraTargetDescriptor.width, cameraTargetDescriptor.height);
+                    CallNativeMethod(_srcRT.GetNativeTexturePtr(), _dstRT.GetNativeTexturePtr());
                 }
 #endif
                 cmd.Blit(_dstRT, source);
