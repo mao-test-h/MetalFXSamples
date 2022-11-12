@@ -130,7 +130,7 @@
 				347A073328FC442D00F9BB9B /* MetalFXSamplesTests */,
 				347A073D28FC442D00F9BB9B /* MetalFXSamplesUITests */,
 			);
-			path = MetalFXSamples;
+			name = MetalFXSamples;
 			sourceTree = "<group>";
 		};
 		347A073328FC442D00F9BB9B /* MetalFXSamplesTests */ = {
@@ -539,8 +539,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MetalFXSamples/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
@@ -555,7 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mao.samples.MetalFXSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MetalFXSamples/Sources/MetalFXSamples-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MetalFXSamples-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -570,8 +571,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MetalFXSamples/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
@@ -586,7 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mao.samples.MetalFXSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MetalFXSamples/Sources/MetalFXSamples-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MetalFXSamples-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
