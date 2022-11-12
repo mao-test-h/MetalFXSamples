@@ -51,9 +51,8 @@
 		34F00CFF291FAB4500864D78 /* MetalTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				34F00D00291FAB4500864D78 /* MetalTutorialApp.swift */,
-				34F00D02291FAB4500864D78 /* ContentView.swift */,
 				34F00D04291FAB4600864D78 /* Assets.xcassets */,
+				34F00D0E291FABF600864D78 /* Sources */,
 				34F00D06291FAB4600864D78 /* Preview Content */,
 			);
 			path = MetalTutorial;
@@ -65,6 +64,15 @@
 				34F00D07291FAB4600864D78 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34F00D0E291FABF600864D78 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				34F00D00291FAB4500864D78 /* MetalTutorialApp.swift */,
+				34F00D02291FAB4500864D78 /* ContentView.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +275,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetalTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = 49KJWXC8U6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,7 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetalTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = 49KJWXC8U6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

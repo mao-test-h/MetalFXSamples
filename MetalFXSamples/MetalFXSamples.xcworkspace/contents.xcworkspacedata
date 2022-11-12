@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MetalTutorial/MetalTutorial.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MetalFXSamples/MetalFXSamples.xcodeproj">
    </FileRef>
 </Workspace>
