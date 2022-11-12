@@ -1,6 +1,6 @@
 ![Platform](https://img.shields.io/badge/platform-iOS16.0%2B%20%7C%20iPadOS16.0%2B-9cf)<br>
-![Xcode](https://img.shields.io/badge/Xcode-14.1%20beta3-blue)
-![Unity](https://img.shields.io/badge/Unity-2021.3.12f1-lightgrey)
+![Xcode](https://img.shields.io/badge/Xcode-14.1-blue)
+![Unity](https://img.shields.io/badge/Unity-2021.3.13f1-lightgrey)
 
 # MetalFXSamples
 
