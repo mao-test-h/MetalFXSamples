@@ -11,7 +11,6 @@
 		34F00D03291FAB4500864D78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F00D02291FAB4500864D78 /* ContentView.swift */; };
 		34F00D05291FAB4600864D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F00D04291FAB4600864D78 /* Assets.xcassets */; };
 		34F00D08291FAB4600864D78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F00D07291FAB4600864D78 /* Preview Assets.xcassets */; };
-		34F00D11291FACEF00864D78 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F00D10291FACEF00864D78 /* Renderer.swift */; };
 		34F00D13291FAD0100864D78 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F00D12291FAD0100864D78 /* MetalView.swift */; };
 		34F00D19291FAD4400864D78 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 34F00D18291FAD4400864D78 /* Shader.metal */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		34F00D02291FAB4500864D78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34F00D04291FAB4600864D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F00D07291FAB4600864D78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		34F00D10291FACEF00864D78 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		34F00D12291FAD0100864D78 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		34F00D14291FAD1800864D78 /* MetalTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		34F00D17291FAD3600864D78 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 		34F00D0F291FACD800864D78 /* MetalView */ = {
 			isa = PBXGroup;
 			children = (
-				34F00D10291FACEF00864D78 /* Renderer.swift */,
 				34F00D12291FAD0100864D78 /* MetalView.swift */,
 				34F00D17291FAD3600864D78 /* ShaderTypes.h */,
 				34F00D18291FAD4400864D78 /* Shader.metal */,
@@ -169,7 +166,6 @@
 			files = (
 				34F00D13291FAD0100864D78 /* MetalView.swift in Sources */,
 				34F00D03291FAB4500864D78 /* ContentView.swift in Sources */,
-				34F00D11291FACEF00864D78 /* Renderer.swift in Sources */,
 				34F00D19291FAD4400864D78 /* Shader.metal in Sources */,
 				34F00D01291FAB4500864D78 /* MetalTutorialApp.swift in Sources */,
 			);

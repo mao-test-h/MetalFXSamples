@@ -2,6 +2,8 @@
 #include "ShaderTypes.h"
 using namespace metal;
 
+// NOTE: Metalの言語仕様はC言語の拡張なので、`ShaderTypes.h`をincludeして定義済みの構造体を使い回すことが可能
+
 typedef struct {
     float4 position [[position]];
     float4 color;
