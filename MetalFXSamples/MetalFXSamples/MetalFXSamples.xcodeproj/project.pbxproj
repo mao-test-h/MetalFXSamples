@@ -219,9 +219,9 @@
 		34F00CBD291FA73F00864D78 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				347A075828FDCDE200F9BB9B /* MetalFXSamples-Bridging-Header.h */,
 				347A071D28FC442B00F9BB9B /* AppDelegate.swift */,
 				347A072128FC442B00F9BB9B /* ViewController.swift */,
-				347A075828FDCDE200F9BB9B /* MetalFXSamples-Bridging-Header.h */,
 				347A075428FDC52C00F9BB9B /* SwiftUI */,
 				347A075B28FDCE4800F9BB9B /* Renderer */,
 			);
