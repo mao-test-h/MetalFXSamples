@@ -134,7 +134,7 @@ static void DoExtraDrawCall() {
 // copy of render surface to a texture
 
 static UnityRenderBuffer g_CopySrcRB = 0, g_CopyDstRB = 0;
-UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API void SetRTCopyTargets(void* src, void* dst) {
+UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API void setRTCopyTargets(void* src, void* dst) {
     g_CopySrcRB = src, g_CopyDstRB = dst;
 }
 
@@ -234,7 +234,7 @@ static void UNITY_INTERFACE_API OnGraphicsDeviceEvent(UnityGfxDeviceEventType ev
     }
 }
 
-UnityRenderingEvent UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API GetRenderEventFunc() {
+UnityRenderingEvent UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API getRenderEventFunc() {
     return OnRenderEvent;
 }
 
