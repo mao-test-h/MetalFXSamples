@@ -203,36 +203,18 @@ static void DoCaptureRT() {
     cmd = nil;
 }
 
+// TODO: ↑をSwift側に実装
 
 // MARK:- P/Invoke
 
-enum EventID {
-    event_ExtraDrawCall = 0,
-    event_CaptureRT,
-};
-
-// Unity 側で GL.IssuePluginEvent を呼ぶとレンダリングスレッドから呼ばれる
-static void UNITY_INTERFACE_API OnRenderEvent(int eventID) {
-    switch (eventID) {
-        case event_ExtraDrawCall:
-            DoExtraDrawCall();
-            break;
-        case event_CaptureRT:
-            DoCaptureRT();
-            break;
-    }
-}
+// NOTE: onRenderEventの実装はSwift側にある (ここでは外部宣言だけ)
+extern void onRenderEvent();
 
 // GL.IssuePluginEvent で登録するコールバック関数のポインタを返す
 UnityRenderingEvent UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API getRenderEventFunc() {
-    return OnRenderEvent;
+    // Swift側で実装している`onRenderEvent`を返す
+    return onRenderEvent;
 }
-
-// copy of render surface to a texture
-UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API void setRTCopyTargets(void* src, void* dst) {
-    g_CopySrcRB = src, g_CopyDstRB = dst;
-}
-
 
 // MARK:- Low-level native plug-in interface
 
