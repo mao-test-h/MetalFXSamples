@@ -13,8 +13,8 @@ namespace MetalFXSamples.Plugins.MetalNativeRenderSample.Managed
 
         public void DoCopyRT(RenderTexture srcRT, RenderTexture dstRT)
         {
-            RenderBuffer src = srcRT ? srcRT.colorBuffer : Display.main.colorBuffer,
-                dst = dstRT ? dstRT.colorBuffer : Display.main.colorBuffer;
+            var src = srcRT ? srcRT.colorBuffer : Display.main.colorBuffer;
+            var dst = dstRT ? dstRT.colorBuffer : Display.main.colorBuffer;
             SetRTCopyTargets(src.GetNativeRenderBufferPtr(), dst.GetNativeRenderBufferPtr());
             GL.IssuePluginEvent(GetRenderEventFunc(), (int)EventType.CopyRTtoRT);
         }
