@@ -8,15 +8,19 @@ namespace MetalFXSamples.Plugins.MetalNativeRenderSample.Managed
     {
         public void DoExtraDrawCall()
         {
-            GL.IssuePluginEvent(GetRenderEventFunc(), (int)EventType.ExtraDrawCall);
+            CallRenderEventFunc(EventType.ExtraDrawCall);
         }
 
         public void DoCopyRT(RenderTexture srcRT, RenderTexture dstRT)
         {
+            [DllImport("__Internal", EntryPoint = "setRTCopyTargets")]
+            static extern void SetRTCopyTargets(IntPtr src, IntPtr dst);
+
             var src = srcRT ? srcRT.colorBuffer : Display.main.colorBuffer;
             var dst = dstRT ? dstRT.colorBuffer : Display.main.colorBuffer;
             SetRTCopyTargets(src.GetNativeRenderBufferPtr(), dst.GetNativeRenderBufferPtr());
-            GL.IssuePluginEvent(GetRenderEventFunc(), (int)EventType.CopyRTtoRT);
+
+            CallRenderEventFunc(EventType.CopyRTtoRT);
         }
 
         // we will do several pretty useless events to show the usage of all api functions
@@ -29,20 +33,12 @@ namespace MetalFXSamples.Plugins.MetalNativeRenderSample.Managed
             CopyRTtoRT
         }
 
-        private IntPtr GetRenderEventFunc()
+        private static void CallRenderEventFunc(EventType eventType)
         {
             [DllImport("__Internal", EntryPoint = "getRenderEventFunc")]
-            static extern IntPtr NativeMethod();
+            static extern IntPtr GetRenderEventFunc();
 
-            return NativeMethod();
-        }
-
-        private void SetRTCopyTargets(IntPtr src, IntPtr dst)
-        {
-            [DllImport("__Internal", EntryPoint = "setRTCopyTargets")]
-            static extern void NativeMethod(IntPtr src, IntPtr dst);
-
-            NativeMethod(src, dst);
+            GL.IssuePluginEvent(GetRenderEventFunc(), (int)eventType);
         }
     }
 }
