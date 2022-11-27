@@ -6,6 +6,11 @@
 
 MetalFXの練習場
 
+> **Note**<br>
+> ここでやっていることの詳細な技術解説については[Unity Advent Calendar 2022](https://qiita.com/advent-calendar/2022/unity)にて記述予定。<br>
+> (リポジトリは勿体ぶってプライベートにするほどでも無いので先行公開してます)<br>
+> 完成してきたら諸々追記していきます。
+
 
 # LICENSES
 
