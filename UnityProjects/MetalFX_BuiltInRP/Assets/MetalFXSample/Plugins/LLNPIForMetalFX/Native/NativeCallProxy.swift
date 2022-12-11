@@ -21,7 +21,7 @@ func onRenderEvent(eventId: Int32) {
 
 // P/Invoke
 
-@_cdecl("setRTCopyTargets")
-func setRTCopyTargets(_ src: UnityRenderBuffer, _ dst: UnityRenderBuffer) {
-    MetalPlugin.shared.setRTCopyTargets(src, dst)
+@_cdecl("setRenderTarget")
+func setRenderTarget(_ src: UnityRenderBuffer) {
+    MetalPlugin.shared.setRenderTarget(src)
 }
