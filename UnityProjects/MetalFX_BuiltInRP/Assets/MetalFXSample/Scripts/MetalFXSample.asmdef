@@ -1,0 +1,16 @@
+{
+    "name": "MetalFXSample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a498ff3d299b845508f9279b51ecf3ad"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
