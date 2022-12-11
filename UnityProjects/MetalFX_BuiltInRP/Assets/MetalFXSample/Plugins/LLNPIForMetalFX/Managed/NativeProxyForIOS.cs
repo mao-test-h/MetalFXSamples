@@ -12,7 +12,7 @@ namespace MetalFXSample.Plugins.LLNPIForMetalFX.Managed
             static extern void SetRenderTarget(IntPtr renderTexture);
 
             var src = renderTexture ? renderTexture.colorBuffer : Display.main.colorBuffer;
-            SetRenderTarget(renderTexture.GetNativeDepthBufferPtr());
+            SetRenderTarget(src.GetNativeRenderBufferPtr());
             CallRenderEventFunc(EventType.SpatialScaling);
         }
 
