@@ -22,6 +22,6 @@ func onRenderEvent(eventId: Int32) {
 // P/Invoke
 
 @_cdecl("setRenderTarget")
-func setRenderTarget(_ src: UnityRenderBuffer) {
-    MetalPlugin.shared.setRenderTarget(src)
+func setRenderTarget(_ renderBuffer: UnityRenderBuffer) {
+    MetalPlugin.shared.setRenderTarget(renderBuffer)
 }
