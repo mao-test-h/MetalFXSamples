@@ -35,7 +35,8 @@ namespace MetalFXSample.Plugins.LLNPIForMetalFX.Editor
         {
             // iOSビルド結果にある`UnityFramework.h`を改造済みのソースに差し替える
             const string headerFile = "UnityFramework.h";
-            const string replaceHeaderPath = "/LLNPISample/Plugins/LLNPIWithMetal/Native/.ReplaceSources/" + headerFile;
+            const string replaceHeaderPath =
+                "/MetalFXSample/Plugins/LLNPIForMetalFX/Native/.ReplaceSources/" + headerFile;
             const string nativePath = "/UnityFramework/" + headerFile;
 
             var srcPath = Application.dataPath + replaceHeaderPath;
