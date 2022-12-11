@@ -18,10 +18,17 @@ namespace MetalFXSample.Plugins.LLNPIForMetalFX.Editor
             var pbxProject = new PBXProject();
             pbxProject.ReadFromString(File.ReadAllText(pbxProjectPath));
 
+            AddFramework(ref pbxProject);
             ReplaceNativeSources(xcodeprojPath);
             SetPublicHeader(ref pbxProject);
 
             File.WriteAllText(pbxProjectPath, pbxProject.WriteToString());
+        }
+
+        private static void AddFramework(ref PBXProject pbxProject)
+        {
+            var frameworkGuid = pbxProject.GetUnityFrameworkTargetGuid();
+            pbxProject.AddFrameworkToProject(frameworkGuid, "MetalFX.framework", false);
         }
 
         private static void ReplaceNativeSources(string xcodeprojPath)
