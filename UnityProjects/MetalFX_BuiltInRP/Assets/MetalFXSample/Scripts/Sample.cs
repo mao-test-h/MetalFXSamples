@@ -25,17 +25,13 @@ namespace MetalFXSample.Scripts
 
         private void OnPostRender()
         {
-            _nativeProxy.DoExtraDrawCall();
             StartCoroutine(OnFrameEnd());
         }
 
         private IEnumerator OnFrameEnd()
         {
             yield return new WaitForEndOfFrame();
-
-            // こちらのイベントはUnityが実行する全てのレンダリングが完了した後に呼び出す必要がある。
-            // (AAが関係している場合には特に重要であり、ネイティブ側でエンコーダーを終了することによってAAの解決が行われる)
-            _nativeProxy.DoCopyRT(_targetCamera.targetTexture, null);
+            _nativeProxy.DoSpatialScaling(_targetCamera.targetTexture);
             yield return null;
         }
     }
